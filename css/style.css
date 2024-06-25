@@ -1,0 +1,137 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --mainBackground: hsl(233, 47%, 7%);
+    --cardBackground: hsl(244, 38%, 16%);
+    --accentColor: hsl(277, 64%, 61%);
+    --mainHeadingStats: hsl(0, 0%, 100%);
+    --mainParagraph: hsla(0, 0%, 100%, 0.75);
+    --statHeadings: hsla(0, 0%, 100%, 0.6);
+    --paragraphFontSize: 15px;
+}
+img,
+picture,
+canvas,
+video,
+svg{
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+a,
+a:hover{
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: "Inter", sans-serif;
+    overflow-wrap: break-word;
+}
+
+html, body{
+    height: 100%;
+}
+body{
+    font-family: "Lexend Deca", sans-serif;
+    display: grid;
+    overflow: hidden;
+    place-content: center;
+    margin: 1.2rem;
+    background-color: var(--mainBackground);
+}
+.stats_card{
+    max-width: 1107px;
+    background-color: var(--cardBackground);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.header-img{
+    flex-basis: 50%;
+    position: relative;
+}
+.header-img::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--accentColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+}
+.stats_info{
+    padding: 5rem 5rem 0rem;
+    flex-basis: 50%;
+}
+.stats_info h1{
+    font-size: 32px;
+    color: var(--mainHeadingStats);
+    line-height: 1.3em;
+}
+.stats_info h1 > a{
+    color: var(--accentColor);
+}
+.stats_info > p{
+    color: var(--mainParagraph);
+    font-size: var(--paragraphFontSize);
+    line-height: 1.7em;
+    font-weight: 300;
+    margin-top: 25px;
+}
+.stats{
+    display: flex;
+    padding: 50px 0 0;
+    justify-content: space-between;
+}
+.stats h3{
+    font-family: "Inter", sans-serif;
+    color: var(--mainHeadingStats);
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.stats p{
+    font-family: "Lexend Deca", sans-serif;
+    color: var(--mainParagraph);
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+@media all and (max-width: 600px){
+    .stats_card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+    .stats{
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0 0;
+        justify-content: space-between;
+        text-align: center;
+        gap: 2rem;
+    }
+    .stats_info{
+        padding: 2.5rem;
+    }
+    .stats_info > h1{
+        text-align: center;
+    }
+    .stats_info > p{
+        text-align: center;
+        letter-spacing: 1px;
+    }
+}
